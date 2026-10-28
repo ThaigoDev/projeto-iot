@@ -1,0 +1,50 @@
+<section id="sensores" data-transition="fade" style="background:#f2f0e8;color:#0f1e18;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#1f8f5f">05 · SENSORES</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;letter-spacing:-2px;line-height:1.05">O que cada talhão mede</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px;flex:1">
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">%</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Umidade do solo</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Base da irrigação automática</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">°C</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Temperatura do solo</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Germinação e atividade das raízes</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">°C</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Temperatura do ar</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Estresse térmico e risco de geada</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">% UR</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Umidade do ar</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Risco de doenças fúngicas</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">pH</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">pH do solo</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Disponibilidade de nutrientes</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">mS/cm</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Condutividade</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Nível de fertilização do solo</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">0 – 1</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">NDVI</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Vigor vegetativo da planta</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:20px;padding:32px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#1f8f5f">insetos/h</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600">Pragas</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Contagem na armadilha do talhão</p>
+</div>
+</div>
+<p style="font-size:26px;color:#43554d">Faixas ideais definidas por cultura em <span style="color:#1f8f5f">config/farm.json</span> — 12 culturas, do tomate ao café.</p>
+<aside>Oito indicadores por talhão, publicados a cada 2 segundos. Cada cultura tem sua própria faixa ideal: alface quer solo mais úmido, uva tolera solo mais seco, batata aceita pH mais ácido. Tudo isso fica num único arquivo de configuração compartilhado entre simuladores e backend.</aside>
+</section>

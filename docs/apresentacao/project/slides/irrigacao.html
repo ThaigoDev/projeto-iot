@@ -1,0 +1,48 @@
+<section id="irrigacao" data-transition="fade" style="background:#f2f0e8;color:#0f1e18;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#1f8f5f">07 · AUTOMAÇÃO</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;letter-spacing:-2px;line-height:1.05">Irrigação automática em malha fechada</h2>
+</div>
+<div style="display:flex;gap:12px;align-items:center">
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f">1</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600">Detecta</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Umidade cai abaixo do mínimo da cultura</p>
+</div>
+<x-shape kind="arrow-right" style="background:#1f8f5f;width:40px;height:20px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f">2</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600">Decide</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Motor de regras gera o comando</p>
+</div>
+<x-shape kind="arrow-right" style="background:#1f8f5f;width:40px;height:20px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f">3</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600">Comanda</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Publica via MQTT para o atuador</p>
+</div>
+<x-shape kind="arrow-right" style="background:#1f8f5f;width:40px;height:20px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f">4</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600">Atua</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Válvula abre e confirma o estado</p>
+</div>
+<x-shape kind="arrow-right" style="background:#1f8f5f;width:40px;height:20px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:10px;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:28px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f">5</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:600">Fecha</h3>
+<p style="font-size:24px;line-height:1.4;color:#43554d">Ao atingir 70% da faixa ideal</p>
+</div>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;gap:24px;align-items:center;background:#fff4dc;border:1px solid #f0d08a;border-radius:18px;padding:32px">
+<x-icon name="Warning" style="color:#9a6400;width:48px;height:48px"></x-icon>
+<p style="font-size:26px;line-height:1.4;color:#4a3500"><b>Detecção de falha:</b> válvula aberta por 90 s sem a umidade subir gera alerta crítico de “irrigação sem efeito”.</p>
+</div>
+<div style="flex:1;display:flex;gap:24px;align-items:center;background:#e3f4fb;border:1px solid #a9d9ee;border-radius:18px;padding:32px">
+<x-icon name="Users" style="color:#0e5b7a;width:48px;height:48px"></x-icon>
+<p style="font-size:26px;line-height:1.4;color:#0b3a4d"><b>Controle manual:</b> o operador abre ou fecha a válvula pelo painel; a automação pausa por 60 s.</p>
+</div>
+</div>
+<aside>A irrigação é um laço fechado: o sensor mede, a regra decide, o comando vai pelo broker, o atuador confirma e o próprio sensor mostra o efeito. Se a umidade não sobe depois de 90 segundos de válvula aberta, o sistema entende que há falha física e dispara um alerta crítico.</aside>
+</section>

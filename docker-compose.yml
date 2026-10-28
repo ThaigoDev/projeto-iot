@@ -1,0 +1,92 @@
+name: agrosentinel
+
+# Imagem única para todos os dispositivos de campo simulados
+x-device: &device
+  build: ./simulators
+  image: agrosentinel/device-sim:1.0
+  restart: unless-stopped
+  depends_on: [mosquitto]
+  volumes:
+    - ./config:/config:ro
+  networks: [campo]
+
+services:
+  # ---------------------------------------------------------- infraestrutura
+  mosquitto:
+    image: eclipse-mosquitto:2.0.20
+    container_name: agro-broker
+    restart: unless-stopped
+    ports: ["1884:1883"]   # 1884 no host para não conflitar com outros brokers
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+    networks: [campo, core]
+
+  core:
+    build: ./backend
+    image: agrosentinel/core:1.0
+    container_name: agro-core
+    restart: unless-stopped
+    depends_on: [mosquitto]
+    environment:
+      MQTT_URL: mqtt://mosquitto:1883
+      FARM_CONFIG: /config/farm.json
+      DB_PATH: /data/agrosentinel.db
+    volumes:
+      - ./config:/config:ro
+      - core-data:/data
+    networks: [core]
+
+  dashboard:
+    image: nginx:1.27-alpine
+    container_name: agro-dashboard
+    restart: unless-stopped
+    depends_on: [core]
+    ports: ["8080:80"]
+    volumes:
+      - ./dashboard/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./dashboard/public:/usr/share/nginx/html:ro
+    networks: [core]
+
+  # ---------------------------------------------------------- dispositivos físicos simulados
+  node-norte:
+    <<: *device
+    container_name: agro-node-norte
+    command: ["python", "field_node.py"]
+    environment: { NODE_ID: node-norte }
+
+  node-sul:
+    <<: *device
+    container_name: agro-node-sul
+    command: ["python", "field_node.py"]
+    environment: { NODE_ID: node-sul, SEED_ANOMALIES: "T-05:nutrient_deficit" }
+
+  node-leste:
+    <<: *device
+    container_name: agro-node-leste
+    command: ["python", "field_node.py"]
+    environment: { NODE_ID: node-leste, SEED_ANOMALIES: "T-07:pest_outbreak,T-08:acid_drift" }
+
+  node-oeste:
+    <<: *device
+    container_name: agro-node-oeste
+    command: ["python", "field_node.py"]
+    environment: { NODE_ID: node-oeste, SEED_ANOMALIES: "T-11:valve_fault" }
+
+  estacao-meteo:
+    <<: *device
+    container_name: agro-estacao-meteo
+    command: ["python", "weather_station.py"]
+    environment: { DEVICE_ID: estacao-meteo }
+
+  atuador-irrigacao:
+    <<: *device
+    container_name: agro-atuador-irrigacao
+    command: ["python", "irrigation_actuator.py"]
+    environment: { DEVICE_ID: atuador-irrigacao }
+
+networks:
+  campo: {}   # rede dos dispositivos de campo (LoRa/Wi-Fi simulado)
+  core: {}    # rede dos serviços de backend
+
+volumes:
+  core-data: {}

@@ -1,0 +1,21 @@
+<section id="executar" data-transition="fade" style="background:#f2f0e8;color:#0f1e18;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#1f8f5f">12 · COMO EXECUTAR</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;letter-spacing:-2px;line-height:1.05">Um comando para subir tudo</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;flex:1">
+<div style="display:flex;gap:32px;align-items:center;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:32px 40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f;width:60px">1</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:26px;color:#43554d">Subir os 9 containers</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;color:#0f1e18">docker compose up -d --build</p></div>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:32px 40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f;width:60px">2</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:26px;color:#43554d">Abrir o painel</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;color:#0f1e18">http://localhost:8080</p></div>
+</div>
+<div style="display:flex;gap:32px;align-items:center;background:#fbfaf5;border:1px solid #ddd9cc;border-radius:18px;padding:32px 40px">
+<p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:48px;font-weight:700;color:#1f8f5f;width:60px">3</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-size:26px;color:#43554d">Espiar as mensagens MQTT (opcional)</p><p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:32px;color:#0f1e18">mosquitto_sub -h localhost -p 1884 -t "agro/#" -v</p></div>
+</div>
+</div>
+<aside>Para rodar basta Docker. Um único docker compose up sobe broker, serviço central, painel e os seis dispositivos simulados. O broker fica exposto na porta 1884 do host para quem quiser assinar os tópicos diretamente.</aside>
+</section>

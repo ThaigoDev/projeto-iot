@@ -1,0 +1,24 @@
+<section id="fluxo" data-transition="fade" style="background:#102019;color:#eaf2ee;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#3ecf8e">09 · FLUXO DO SISTEMA</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;letter-spacing:-2px;line-height:1.05">Monitoramento de todo o pipeline</h2>
+</div>
+<div style="display:flex;gap:56px;align-items:start">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600;color:#3ecf8e">Fluxograma vivo</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Partículas aceleram com a vazão real; etapa parada fica em vermelho.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600;color:#3ecf8e">Vazão e latência</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Mensagens por segundo e latência média e p95 do sensor ao serviço.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:600;color:#3ecf8e">Cada container</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Status, última mensagem, bateria, sinal e firmware de cada dispositivo.</p>
+</div>
+</div>
+<img src="/_blob/ecc512e0e367e2b0ab347222b8b19eae" alt="Tela Fluxo do sistema com fluxograma em tempo real, indicadores de vazão e latência" style="width:960px;height:600px;object-fit:cover;border-radius:18px;border:1px solid #24423a">
+</div>
+<aside>A segunda tela é o painel de monitoramento do fluxo. O fluxograma mostra cada etapa: dispositivos, broker, ingestão, regras, automação, banco, API e painel. Os dados vêm de métricas reais: estatísticas internas do Mosquitto pelos tópicos $SYS, contadores do serviço central e o heartbeat de cada dispositivo.</aside>
+</section>

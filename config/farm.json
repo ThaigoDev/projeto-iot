@@ -1,0 +1,65 @@
+{
+  "farm": {
+    "name": "Fazenda Boa Vista",
+    "location": "Ribeirão Preto · SP",
+    "areaHa": 46.8
+  },
+  "metrics": {
+    "soilMoisture": { "label": "Umidade do solo", "unit": "%", "tolerance": 10, "decimals": 1 },
+    "soilTemp": { "label": "Temperatura do solo", "unit": "°C", "tolerance": 3, "decimals": 1 },
+    "airTemp": { "label": "Temperatura do ar", "unit": "°C", "tolerance": 4, "decimals": 1 },
+    "airHumidity": { "label": "Umidade do ar", "unit": "%", "tolerance": 12, "decimals": 0 },
+    "ph": { "label": "pH do solo", "unit": "", "tolerance": 0.4, "decimals": 2 },
+    "ec": { "label": "Condutividade (nutrientes)", "unit": "mS/cm", "tolerance": 0.5, "decimals": 2 },
+    "ndvi": { "label": "Vigor vegetativo (NDVI)", "unit": "", "tolerance": 0.1, "decimals": 2 },
+    "pests": { "label": "Pragas na armadilha", "unit": "/h", "tolerance": 6, "decimals": 0 }
+  },
+  "crops": {
+    "tomate":   { "name": "Tomate",   "color": "#e5484d", "ranges": { "soilMoisture": [60, 80], "soilTemp": [16, 28], "airTemp": [15, 31], "airHumidity": [50, 85], "ph": [6.0, 6.8], "ec": [2.0, 3.5], "ndvi": [0.62, 0.92], "pests": [0, 5] } },
+    "alface":   { "name": "Alface",   "color": "#46a758", "ranges": { "soilMoisture": [65, 85], "soilTemp": [14, 25], "airTemp": [12, 29], "airHumidity": [55, 90], "ph": [6.0, 7.0], "ec": [0.8, 1.6], "ndvi": [0.55, 0.9], "pests": [0, 4] } },
+    "pimentao": { "name": "Pimentão", "color": "#f76b15", "ranges": { "soilMoisture": [55, 75], "soilTemp": [16, 28], "airTemp": [16, 32], "airHumidity": [50, 85], "ph": [5.8, 6.8], "ec": [1.8, 3.0], "ndvi": [0.6, 0.9], "pests": [0, 5] } },
+    "milho":    { "name": "Milho",    "color": "#ffc53d", "ranges": { "soilMoisture": [45, 70], "soilTemp": [16, 30], "airTemp": [14, 34], "airHumidity": [40, 85], "ph": [5.6, 7.0], "ec": [1.0, 2.5], "ndvi": [0.6, 0.92], "pests": [0, 6] } },
+    "soja":     { "name": "Soja",     "color": "#a18072", "ranges": { "soilMoisture": [50, 75], "soilTemp": [16, 30], "airTemp": [15, 33], "airHumidity": [45, 85], "ph": [6.0, 7.0], "ec": [0.8, 2.0], "ndvi": [0.6, 0.92], "pests": [0, 6] } },
+    "feijao":   { "name": "Feijão",   "color": "#8e4ec6", "ranges": { "soilMoisture": [50, 75], "soilTemp": [16, 28], "airTemp": [15, 32], "airHumidity": [45, 85], "ph": [5.8, 6.8], "ec": [0.8, 2.0], "ndvi": [0.58, 0.9], "pests": [0, 5] } },
+    "morango":  { "name": "Morango",  "color": "#e93d82", "ranges": { "soilMoisture": [60, 80], "soilTemp": [13, 25], "airTemp": [10, 30], "airHumidity": [55, 85], "ph": [5.5, 6.5], "ec": [1.0, 2.0], "ndvi": [0.55, 0.88], "pests": [0, 4] } },
+    "cafe":     { "name": "Café",     "color": "#ad7f58", "ranges": { "soilMoisture": [50, 70], "soilTemp": [16, 26], "airTemp": [14, 31], "airHumidity": [50, 85], "ph": [5.5, 6.5], "ec": [0.8, 2.0], "ndvi": [0.62, 0.92], "pests": [0, 5] } },
+    "uva":      { "name": "Uva",      "color": "#6e56cf", "ranges": { "soilMoisture": [40, 65], "soilTemp": [16, 28], "airTemp": [14, 33], "airHumidity": [40, 88], "ph": [6.0, 7.0], "ec": [1.0, 2.5], "ndvi": [0.55, 0.88], "pests": [0, 5] } },
+    "cenoura":  { "name": "Cenoura",  "color": "#ff8b3e", "ranges": { "soilMoisture": [55, 75], "soilTemp": [15, 25], "airTemp": [12, 30], "airHumidity": [50, 85], "ph": [6.0, 6.8], "ec": [1.0, 2.0], "ndvi": [0.55, 0.88], "pests": [0, 5] } },
+    "batata":   { "name": "Batata",   "color": "#d6a35c", "ranges": { "soilMoisture": [60, 80], "soilTemp": [14, 25], "airTemp": [12, 30], "airHumidity": [50, 85], "ph": [5.0, 6.5], "ec": [1.5, 2.8], "ndvi": [0.6, 0.9], "pests": [0, 5] } },
+    "trigo":    { "name": "Trigo",    "color": "#e2a336", "ranges": { "soilMoisture": [40, 65], "soilTemp": [12, 25], "airTemp": [10, 30], "airHumidity": [40, 88], "ph": [6.0, 7.0], "ec": [0.8, 2.0], "ndvi": [0.58, 0.9], "pests": [0, 6] } }
+  },
+  "nodes": [
+    {
+      "id": "node-norte", "name": "Gateway Setor Norte", "firmware": "agrosense-fw 2.4.1",
+      "plots": [
+        { "id": "T-01", "crop": "tomate",   "variety": "Italiano Débora", "areaHa": 4.2, "daysPlanted": 62 },
+        { "id": "T-02", "crop": "alface",   "variety": "Crespa Vanda",    "areaHa": 2.1, "daysPlanted": 28 },
+        { "id": "T-03", "crop": "pimentao", "variety": "Magali R",        "areaHa": 3.0, "daysPlanted": 74 }
+      ]
+    },
+    {
+      "id": "node-sul", "name": "Gateway Setor Sul", "firmware": "agrosense-fw 2.4.1",
+      "plots": [
+        { "id": "T-04", "crop": "milho",  "variety": "AG 8088",    "areaHa": 6.5, "daysPlanted": 55 },
+        { "id": "T-05", "crop": "soja",   "variety": "BRS 1010",   "areaHa": 7.8, "daysPlanted": 48 },
+        { "id": "T-06", "crop": "feijao", "variety": "Carioca BRS", "areaHa": 3.4, "daysPlanted": 36 }
+      ]
+    },
+    {
+      "id": "node-leste", "name": "Gateway Setor Leste", "firmware": "agrosense-fw 2.3.9",
+      "plots": [
+        { "id": "T-07", "crop": "morango", "variety": "San Andreas", "areaHa": 1.6, "daysPlanted": 90 },
+        { "id": "T-08", "crop": "cafe",    "variety": "Catuaí 144",  "areaHa": 5.2, "daysPlanted": 410 },
+        { "id": "T-09", "crop": "uva",     "variety": "Niágara",     "areaHa": 2.8, "daysPlanted": 220 }
+      ]
+    },
+    {
+      "id": "node-oeste", "name": "Gateway Setor Oeste", "firmware": "agrosense-fw 2.4.0",
+      "plots": [
+        { "id": "T-10", "crop": "cenoura", "variety": "Brasília",  "areaHa": 2.4, "daysPlanted": 58 },
+        { "id": "T-11", "crop": "batata",  "variety": "Ágata",     "areaHa": 4.1, "daysPlanted": 66 },
+        { "id": "T-12", "crop": "trigo",   "variety": "BRS Reponte", "areaHa": 3.7, "daysPlanted": 81 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<section id="arquitetura" data-transition="fade" style="background:#0b1411;color:#eaf2ee;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#3ecf8e">03 · ARQUITETURA</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;letter-spacing:-2px;line-height:1.05">Do sensor ao painel, ponta a ponta</h2>
+</div>
+<div style="display:flex;gap:16px;align-items:center;flex:1">
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:16px;background:#12201b;border:1px solid #24423a;border-radius:20px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;color:#3ecf8e">CAMPO</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600">Dispositivos</h3>
+<ul style="font-size:26px;line-height:1.5;color:#a7bfb5">
+<li>4 gateways de setor</li>
+<li>Estação meteorológica</li>
+<li>Atuador de irrigação</li>
+</ul>
+</div>
+<x-shape kind="arrow-right" style="background:#3ecf8e;width:56px;height:28px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:16px;background:#12201b;border:1px solid #24423a;border-radius:20px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;color:#3ecf8e">COMUNICAÇÃO</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600">Broker MQTT</h3>
+<ul style="font-size:26px;line-height:1.5;color:#a7bfb5">
+<li>Eclipse Mosquitto</li>
+<li>Tópicos por talhão</li>
+<li>Last Will = offline</li>
+</ul>
+</div>
+<x-shape kind="arrow-right" style="background:#3ecf8e;width:56px;height:28px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:16px;background:#12201b;border:1px solid #24423a;border-radius:20px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;color:#3ecf8e">PROCESSAMENTO</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600">Serviço central</h3>
+<ul style="font-size:26px;line-height:1.5;color:#a7bfb5">
+<li>Ingestão</li>
+<li>Motor de regras</li>
+<li>Automação</li>
+</ul>
+</div>
+<x-shape kind="arrow-right" style="background:#3ecf8e;width:56px;height:28px"></x-shape>
+<div style="flex:1;align-self:stretch;display:flex;flex-direction:column;gap:16px;background:#12201b;border:1px solid #24423a;border-radius:20px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:2px;color:#3ecf8e">APRESENTAÇÃO</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600">Dados e painel</h3>
+<ul style="font-size:26px;line-height:1.5;color:#a7bfb5">
+<li>SQLite (histórico)</li>
+<li>REST + WebSocket</li>
+<li>Painel web (Nginx)</li>
+</ul>
+</div>
+</div>
+<p style="font-size:28px;color:#a7bfb5">Comandos de irrigação fazem o caminho inverso: <span style="color:#4cc3f0">serviço central → broker → atuador → válvula</span>.</p>
+<aside>Quatro camadas. No campo, os dispositivos publicam via MQTT. O broker desacopla quem produz de quem consome. O serviço central processa, avalia e decide. A camada de apresentação persiste e entrega ao painel em tempo real por WebSocket. O caminho de volta leva os comandos de irrigação.</aside>
+</section>

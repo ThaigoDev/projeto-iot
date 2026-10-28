@@ -1,0 +1,32 @@
+<section id="regras" data-transition="fade" style="background:#0b1411;color:#eaf2ee;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#3ecf8e">06 · MOTOR DE REGRAS</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;letter-spacing:-2px;line-height:1.05">Como o sistema classifica cada lavoura</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<p style="font-size:24px;color:#a7bfb5">Exemplo: umidade do solo do tomate · faixa ideal 60–80% · tolerância 10 pontos</p>
+<div style="display:flex;gap:6px">
+<div style="flex:15;background:#f0544f;border-radius:14px 0 0 14px;padding:22px 16px"><p style="font-size:26px;font-weight:600;color:#2a0b0a;text-align:center">Crítico &lt;50%</p></div>
+<div style="flex:17;background:#f2b33d;padding:22px 16px"><p style="font-size:26px;font-weight:600;color:#2b1d00;text-align:center">Atenção 50–60%</p></div>
+<div style="flex:36;background:#3ecf8e;padding:22px 16px"><p style="font-size:26px;font-weight:600;color:#062014;text-align:center">Saudável 60–80%</p></div>
+<div style="flex:17;background:#f2b33d;padding:22px 16px"><p style="font-size:26px;font-weight:600;color:#2b1d00;text-align:center">Atenção 80–90%</p></div>
+<div style="flex:15;background:#f0544f;border-radius:0 14px 14px 0;padding:22px 16px"><p style="font-size:26px;font-weight:600;color:#2a0b0a;text-align:center">Crítico &gt;90%</p></div>
+</div>
+</div>
+<div style="display:flex;gap:24px">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-top:6px solid #3ecf8e;border-radius:18px;padding:32px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600;color:#3ecf8e">Saudável</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Todos os indicadores dentro da faixa ideal. Nota 100.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-top:6px solid #f2b33d;border-radius:18px;padding:32px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600;color:#f2b33d">Precisa de atenção</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Fora da faixa, dentro da tolerância. −12 pontos por indicador.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-top:6px solid #f0544f;border-radius:18px;padding:32px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:600;color:#f0544f">Crítico</h3>
+<p style="font-size:26px;line-height:1.4;color:#a7bfb5">Além da tolerância ou irrigação sem efeito. −30 pontos.</p>
+</div>
+</div>
+<p style="font-size:24px;color:#a7bfb5">Leituras suavizadas por média móvel e status só muda após 3 avaliações seguidas: sem alarmes falsos. Cada alerta vem com uma recomendação de manejo.</p>
+<aside>O motor de regras compara cada leitura com a faixa ideal da cultura. Dentro da faixa é saudável; fora, mas dentro da tolerância, precisa de atenção; além da tolerância é crítico. A nota de saúde parte de 100 e perde pontos por indicador problemático. Para evitar alarmes falsos, usamos média móvel e um debounce de três avaliações.</aside>
+</section>

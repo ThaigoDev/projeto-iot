@@ -1,0 +1,39 @@
+<section id="stack" data-transition="fade" style="background:#0b1411;color:#eaf2ee;font-family:'Inter', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;letter-spacing:4px;color:#3ecf8e">11 · TECNOLOGIAS</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;letter-spacing:-2px;line-height:1.05">Stack enxuta, sem dependências pesadas</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;flex:1">
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">dispositivos</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">Python + paho-mqtt</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">Física simples de solo, clima e válvulas</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">mensageria</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">Eclipse Mosquitto</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">MQTT com QoS, mensagens retidas e $SYS</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">serviço central</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">Node.js 22</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">Express, mqtt.js e WebSocket (ws)</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">persistência</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">SQLite (WAL)</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">Nativo do Node, gravação em lote, 6 h de histórico</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">painel</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">Nginx + HTML/JS</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">Sem build; gráficos SVG próprios</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#12201b;border:1px solid #24423a;border-radius:18px;padding:36px">
+<p style="font-family:'JetBrains Mono', 'Courier New', monospace;font-size:24px;color:#3ecf8e">orquestração</p>
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:600">Docker Compose</h3>
+<p style="font-size:24px;line-height:1.4;color:#a7bfb5">9 containers em 2 redes: campo e core</p>
+</div>
+</div>
+<aside>Escolhas pensadas para rodar em qualquer máquina com Docker: nada de banco externo nem etapa de build no front-end. Cada camada pode ser trocada por uma versão de produção sem mudar o contrato MQTT.</aside>
+</section>
