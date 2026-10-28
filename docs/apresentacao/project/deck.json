@@ -3,12 +3,12 @@
   "createdOnFiles": { "v": 1, "at": "2026-10-28T18:35:00Z" },
   "lists": "css",
   "title": "AgroSentinel — Apresentação do Sistema",
-  "order": ["cover", "desafio", "solucao", "arquitetura", "containers", "sensores", "regras", "irrigacao", "painel", "fluxo", "resiliencia", "stack", "executar", "proximos"],
+  "order": ["cover", "desafio", "solucao", "arquitetura", "containers", "sensores", "regras", "irrigacao", "painel", "planta", "fluxo", "resiliencia", "stack", "executar", "proximos"],
   "sections": {
     "s1": { "description": "O problema e a proposta do AgroSentinel", "start": "cover" },
     "s2": { "description": "Arquitetura e componentes físicos em Docker", "start": "arquitetura" },
     "s3": { "description": "Como o sistema mede, classifica e age", "start": "sensores" },
-    "s4": { "description": "O painel de lavouras e o monitoramento do fluxo", "start": "painel" },
+    "s4": { "description": "O painel de lavouras, a planta da fazenda e o monitoramento do fluxo", "start": "painel" },
     "s5": { "description": "Tecnologias, execução e próximos passos", "start": "stack" }
   },
   "faces": {
