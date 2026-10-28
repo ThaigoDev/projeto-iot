@@ -100,6 +100,7 @@
         $('#farm-name').textContent = app.config.farm.name;
         $('#farm-loc').textContent = `${app.config.farm.location} · ${num(app.config.farm.areaHa)} ha`;
         app.flowBuilt = false;
+        app.planBuilt = false;
         onState(data.state);
       } else if (data.type === 'state') {
         onState(data.state);

@@ -9,6 +9,11 @@ Todos os componentes físicos (gateways de campo, estação meteorológica e atu
 
 ![Visão geral](docs/screenshots/overview.png)
 
+**Planta da fazenda:** planta baixa com os 12 talhões no lugar, plantas que murcham quando a lavoura
+fica crítica, gotejamento animado quando a irrigação está ativa e camadas de saúde, umidade, NDVI e pragas.
+
+![Planta da fazenda](docs/screenshots/planta.png)
+
 ## Início rápido
 
 ```bash
@@ -20,6 +25,7 @@ docker compose up -d --build
   | Página | Arquivo |
   |---|---|
   | Visão geral | `index.html` |
+  | Planta da fazenda | `planta.html` |
   | Lavouras | `lavouras.html` |
   | Fluxo do sistema | `fluxo.html` |
   | Eventos e alertas | `eventos.html` |
@@ -94,7 +100,7 @@ agro-monitor/
 ├── simulators/               # dispositivos físicos simulados (Python + paho-mqtt)
 ├── backend/                  # serviço central (Node.js 22, Express, mqtt.js, ws, node:sqlite)
 ├── dashboard/public/         # painel web (HTML/CSS/JS sem build, servido por Nginx)
-│   ├── index.html, lavouras.html, fluxo.html, eventos.html
+│   ├── index.html, planta.html, lavouras.html, fluxo.html, eventos.html
 │   └── js/common.js + js/pages/<página>.js
 └── docs/
     ├── apresentacao/         # fontes dos slides
